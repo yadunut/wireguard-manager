@@ -31,7 +31,7 @@ func InitDB(filepath string) (*DB, error) {
 	table := `CREATE TABLE IF NOT EXISTS users (
 ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 NAME TEXT NOT NULL,
-PRIVATEKEY TEXT NOT NULL,
+PUBLICKEY TEXT NOT NULL,
 IP TEXT NOT NULL
 );`
 
@@ -43,4 +43,17 @@ IP TEXT NOT NULL
 
 func (db *DB) AddClient(client clients.Client) error {
 	return nil
+}
+
+func (db *DB) FindClient(name string) (clients.Client, error) {
+	c := clients.Client{}
+	return c, nil
+}
+
+func (db *DB) DeleteClient(client clients.Client) error {
+	return nil
+}
+
+func (db *DB) ListClients() ([]clients.Client, error) {
+	return nil, nil
 }
